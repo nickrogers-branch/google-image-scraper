@@ -2,11 +2,11 @@ from selenium import webdriver
 import time
 import urllib.request
 import threading
+import os
 
 
 
 _home_directory = 'nicholasrogers'
-
 
 
 def save_file_at_url(url):
@@ -75,25 +75,6 @@ def load_images(query, folder_name, driver):
         except Exception as e:
             print(e)
 
-    # for url in urls:
-    #     try:
-    #         file_name = url.rsplit('/', 1)[1]
-    #         # response = urllib.request.urlopen(url)
-    #         urllib.request.urlretrieve(url, '/Users/' + _home_directory + '/desktop/google_imgs/' + file_name)
-    #     except Exception as e:
-    #         print(e)
-
-
-
-    # links = imgs[0].find_elements_by_xpath('..')
-    # links[0].click()
-    # # imgs[0].click()
-    #
-    # full_images = driver.find_elements_by_class_name('irc_mi')
-    # print(full_images)
-    # print(full_images[1].get_attribute('src'))
-    # print(full_images[1].get_attribute('outerHTML'))
-
 
 options = webdriver.ChromeOptions()
 options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
@@ -110,14 +91,3 @@ except Exception as e:
     print(e)
 finally:
     driver.close()
-
-# Iterate through <a> tags
-
-# links = search_results.find_elements_by_tag_name('a')
-
-# print(links[0].get_attribute('innerHTML'))
-
-# for i in range(min(3,len(links)-1)):
-#     print(links[i].get_attribute('innerHTML'))
-
-# print(driver.page_source)
